@@ -20,11 +20,11 @@ module Spree
         end
 
         def location_after_destroy
-          edit_admin_product_variant_url(@product, @variant)
+          admin_product_variant_variant_properties_url(@product, @variant)
         end
 
         def location_after_save
-          edit_admin_product_variant_url(@product, @variant)
+          admin_product_variant_variant_properties_url(@product, @variant)
         end
     end
   end
