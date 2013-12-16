@@ -1,0 +1,17 @@
+<tr class="variant_property fields" id="spree_<%= dom_id(f.object) %>" data-hook="variant_property">
+  <td class="no-border">
+    <span class="handle"></span>
+    <%= f.hidden_field :id %>
+  </td>
+  <td class='property_name'>
+    <%= f.text_field :property_name, :class => 'autocomplete' %>
+  </td>
+  <td class='value'>
+    <%= f.text_field :value %>
+  </td>
+  <td class="actions">
+    <% if f.object.persisted? %>
+      <%= link_to_with_icon 'icon-trash', '', admin_product_variant_variant_property_url(@product, @variant, f.object), { class: 'no-text delete-resource', data: { :confirm => Spree.t(:are_you_sure), :action => 'remove' } } %>
+    <% end %>
+  </td>
+</tr>

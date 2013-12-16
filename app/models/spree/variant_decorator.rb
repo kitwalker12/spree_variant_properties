@@ -12,8 +12,8 @@ module Spree
 
     def set_property(property_name, property_value)
       ActiveRecord::Base.transaction do
-        property = Property.where(name: property_name).first_or_create!(presentation: property_name)
-        variant_property = VariantProperty.where(variant: self, property: property).first_or_initialize
+        property = Spree::Property.where(name: property_name).first_or_create!(presentation: property_name)
+        variant_property = Spree::VariantProperty.where(variant: self, property: property).first_or_initialize
         variant_property.value = property_value
         variant_property.save!
       end

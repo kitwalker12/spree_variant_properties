@@ -1,0 +1,5 @@
+<div class="form-buttons filter-actions actions" data-hook="buttons">
+  <%= button Spree.t('actions.update'), 'icon-refresh' %>
+  <span class="or"><%= Spree.t(:or) %></span>
+  <%= button_link_to Spree.t('actions.cancel'), admin_product_variant_variant_properties_url(@product, @variant), :icon => 'icon-remove' %>
+</div>
