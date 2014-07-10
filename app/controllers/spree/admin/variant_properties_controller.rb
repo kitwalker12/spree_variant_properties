@@ -6,9 +6,11 @@ module Spree
       before_filter :find_properties
       before_filter :setup_property, :only => [:index]
 
+      respond_to :json
+
       private
         def find_product
-          @product = Spree::Product.find_by(permalink: params[:product_id])
+          @product = Spree::Product.find_by(slug: params[:product_id])
         end
 
         def find_properties
