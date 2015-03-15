@@ -11,8 +11,6 @@ Spree::ProductsController.class_eval do
     @variants = @product.variants_including_master.active(current_currency).includes([:option_values, :images])
     @product_properties = @product.product_properties.includes(:property)
 
-    related_products_ids = @product.relations.pluck(:related_to_id)
-    @related_products = Spree::Product.find_all_by_id(related_products_ids)
 
     @variant_properties = @product.variants.first.variant_properties if @product.variants.first
 
